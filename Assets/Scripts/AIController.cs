@@ -65,9 +65,7 @@ public class AIController : MonoBehaviour
         desiredMovement = desiredMovement.normalized;
         // Use my pawn's speed
         desiredMovement *= pawn.speed;
-        // Pass it into our root motion animator
-        anim.SetFloat("Forward", desiredMovement.z);
-        anim.SetFloat("Right", desiredMovement.x);
+        
 
     }
 
