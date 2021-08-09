@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class HumanController : MonoBehaviour
 {
 
     [HideInInspector]public Pawn pawn;
     public Camera playerCamera;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +19,6 @@ public class HumanController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
 
         //Get the direction my stick (or keys) are pressed
         Vector3 stickDirection = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
@@ -54,10 +50,7 @@ public class HumanController : MonoBehaviour
 
         }
 
-
     }
-
-   
 
     public void RotateToMousePointer()
     {

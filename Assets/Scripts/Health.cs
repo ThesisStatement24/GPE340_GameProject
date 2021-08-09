@@ -4,37 +4,26 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-
 public class Health : MonoBehaviour
 {
 
     [SerializeField] private float maxHealth;
-    public float currentHealth;
-    private Ragdoll ragdoll;
+    [SerializeField] private float currentHealth;
     public UnityEvent OnHeal;
-    public Text healthText;
-
+    public Text HealthText;
 
     // Start is called before the first frame update
     void Start()
     {
-        ragdoll = GetComponent<Ragdoll>();
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
-        {
 
-            OnDeath();
-
-        }
-
-        // Print currentHealth to UI
-        healthText.text = "Health: " + currentHealth;
-
+        HealthText.text = "Health: " + currentHealth;
+        
     }
 
     public void PlayHealthSound()
@@ -59,23 +48,6 @@ public class Health : MonoBehaviour
         currentHealth = Mathf.Min(currentHealth, maxHealth);
         // Call all the functions connected to our OnHeal event
         OnHeal.Invoke();
-
-    }
-
-
-    public void takeDamage(float damageAmount)
-    {
-
-        // Remove amount from health
-        currentHealth -= damageAmount;
-
-    }
-
-    public void OnDeath()
-    {
-
-        // Make Character Ragdoll on death
-        ragdoll.StartRagdoll();
 
     }
 
