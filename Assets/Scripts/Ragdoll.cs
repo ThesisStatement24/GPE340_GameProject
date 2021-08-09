@@ -10,6 +10,7 @@ public class Ragdoll : MonoBehaviour
     private Rigidbody topRigidbody;
     private List<Collider> ragdollColliders;
     private List<Rigidbody> ragdollRigidbodies;
+    public Health health;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class Ragdoll : MonoBehaviour
         anim = GetComponent<Animator>();
         topCollider = GetComponent<Collider>();
         topRigidbody = GetComponent<Rigidbody>();
+        health = GetComponent<Health>();
 
         ragdollColliders = new List<Collider>(GetComponentsInChildren<Collider>());
         ragdollRigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
