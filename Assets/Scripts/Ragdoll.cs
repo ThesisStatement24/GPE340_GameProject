@@ -32,19 +32,7 @@ public class Ragdoll : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-
-            StartRagdoll();
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-
-            StopRagdoll();
-
-        }
+   
     }
 
     public void StartRagdoll()

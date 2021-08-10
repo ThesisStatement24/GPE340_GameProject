@@ -16,8 +16,10 @@ public class HealthPickUp : PickUp
     // Update is called once per frame
     void Update()
     {
-
-        transform.Rotate(0, 2, 0);
+        if (Time.timeScale == 1f)
+        {
+            transform.Rotate(0, 2, 0);
+        }
 
     }
 

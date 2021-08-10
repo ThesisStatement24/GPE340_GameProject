@@ -10,9 +10,11 @@ public class Health : MonoBehaviour
 
     [SerializeField] private float maxHealth;
     public float currentHealth;
+    public float LifeCount;
     private Ragdoll ragdoll;
     public UnityEvent OnHeal;
     public Text healthText;
+    public Text LifeText;
 
 
     // Start is called before the first frame update
@@ -25,7 +27,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentHealth <= 0)
+        if (currentHealth <= 0 && LifeCount <= 0)
         {
 
             OnDeath();
@@ -33,7 +35,7 @@ public class Health : MonoBehaviour
         }
 
         // Print currentHealth to UI
-        healthText.text = "Health: " + currentHealth;
+       
 
     }
 
@@ -76,6 +78,7 @@ public class Health : MonoBehaviour
 
         // Make Character Ragdoll on death
         ragdoll.StartRagdoll();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
 
     }
 
