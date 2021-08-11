@@ -2094,10 +2094,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 885538496752712698, guid: acfb9c1ccc1d78d44bfb78898f1859db,
         type: 3}
+    - target: {fileID: 3534472061912102772, guid: 0df328c1771e5de4e86ce9679330f55b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3534472061912102773, guid: 0df328c1771e5de4e86ce9679330f55b,
         type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3534472061912102777, guid: 0df328c1771e5de4e86ce9679330f55b,
         type: 3}
