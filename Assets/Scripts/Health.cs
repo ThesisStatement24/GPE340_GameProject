@@ -35,7 +35,9 @@ public class Health : MonoBehaviour
         }
 
         // Print currentHealth to UI
-       
+        healthText.text = "Health: " + currentHealth;
+        //Print LifeCount to UI
+        LifeText.text = "Lives: " + LifeCount;
 
     }
 

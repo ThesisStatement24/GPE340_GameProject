@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
 
     public GameObject PauseMenu;
+    public GameObject Settings;
     public bool Paused;
 
 
@@ -59,6 +60,22 @@ public class GameManager : MonoBehaviour
             PauseMenu.SetActive(true);
 
         }
+
+    }
+
+    public void OptionsMenu()
+    {
+
+        PauseMenu.SetActive(false);
+        Settings.SetActive(true);
+
+    }
+
+    public void BackButton()
+    {
+
+        PauseMenu.SetActive(true);
+        Settings.SetActive(false);
 
     }
 

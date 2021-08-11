@@ -42,14 +42,14 @@ public class HumanController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-
+            Debug.Log("Firing Weapon");
             pawn.weapon.OnTriggerPull();
 
         }
 
         if (Input.GetButtonUp("Fire1"))
         {
-
+            
             pawn.weapon.OnTriggerRelease();
 
         }
