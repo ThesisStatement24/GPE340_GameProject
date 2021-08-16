@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class HumanController : MonoBehaviour
@@ -8,6 +9,9 @@ public class HumanController : MonoBehaviour
 
     [HideInInspector]public Pawn pawn;
     public Camera playerCamera;
+    public GameObject Gun1;
+    public GameObject MuzzleFlash;
+    public AudioSource PistolFire;
 
 
 
@@ -42,8 +46,13 @@ public class HumanController : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Firing Weapon");
-            pawn.weapon.OnTriggerPull();
+            if (Time.timeScale == 1)
+            {
+                Debug.Log("Firing Weapon");
+                Instantiate(MuzzleFlash, Gun1.transform.position, Quaternion.identity);
+                PistolFire.Play();
+                pawn.weapon.OnTriggerPull();
+            }
 
         }
 

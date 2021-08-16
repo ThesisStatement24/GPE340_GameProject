@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 
 public class Health : MonoBehaviour
@@ -15,6 +16,7 @@ public class Health : MonoBehaviour
     public UnityEvent OnHeal;
     public Text healthText;
     public Text LifeText;
+    public AudioSource DamageSound;
 
 
     // Start is called before the first frame update
@@ -30,7 +32,7 @@ public class Health : MonoBehaviour
         if (currentHealth <= 0 && LifeCount <= 0)
         {
 
-            OnDeath();
+            StartCoroutine("OnDeath");
 
         }
 
@@ -72,14 +74,15 @@ public class Health : MonoBehaviour
 
         // Remove amount from health
         currentHealth -= damageAmount;
-
+        DamageSound.Play();
     }
 
-    public void OnDeath()
+    IEnumerator OnDeath()
     {
 
         // Make Character Ragdoll on death
         ragdoll.StartRagdoll();
+        yield return new WaitForSeconds(1f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
 
     }

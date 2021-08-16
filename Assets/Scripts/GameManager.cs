@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Screen.fullScreen = Screen.fullScreen;
+
     }
 
     // Update is called once per frame
@@ -28,6 +29,9 @@ public class GameManager : MonoBehaviour
             PauseGame();
 
         }
+
+
+
 
 
     }
@@ -47,6 +51,14 @@ public class GameManager : MonoBehaviour
         Paused = false;
         PauseMenu.SetActive(false);
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+
+    }
+
+    public void fullscreenToggle()
+    {
+
+        // Toggle fullscreen
+        Screen.fullScreen = !Screen.fullScreen;
 
     }
 
